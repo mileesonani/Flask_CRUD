@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+form div {
+    margin: 10px 10px;
+}
+
+form div Label {
+    width: 70px !important;
+}
+
+th,
+td {
+    padding: 5px;
+}
+
+th a,
+td a {
+    padding: 5px;
+}
+
+#btn_add {
+    border: 2px solid blue;
+    background-color: white;
+    color: blue;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px 8px !important;
+}
+
+#btn_edit_form {
+    border: 2px solid blue;
+    background-color: white;
+    color: blue;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px 8px !important;
+}
+
+#btn_delete {
+    border: 2px solid red;
+    background-color: white;
+    color: red;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px 8px !important;
+    text-decoration: none;
+}
+
+#btn_edit {
+    border: 2px solid green;
+    background-color: white;
+    color: green;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px 8px !important;
+    text-decoration: none;
+}
+
+input {
+    border: 1px solid black;
+    padding: 0px 2px !important;
+}
+
+/*# sourceMappingURL=custom.css.map */

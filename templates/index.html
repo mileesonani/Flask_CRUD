@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Data</title>
+{% endblock %}
+
+{% block body %}
+<!-- <div class="content"> -->
+<div>
+    <h1 class="bg-gray-800 text-white font-semibold p-2">Data</h1>
+    {% if tasks | length < 1%} <h3>There are no data...</h3>
+        {% else %}
+        <table class="border-collapse border border-black-800 table-auto m-2">
+            <thead>
+                <tr>
+                    <th class="border border-black-800 p-4">Name</th>
+                    <th class="border border-black-800">Email</th>
+                    <th class="border border-black-800">Phone</th>
+                    <th class="border border-black-800">Gender</th>
+                    <th class="border border-black-800">City</th>
+                    <th class="border border-black-800">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td class="border border-black-800">{{task.Name}}</td>
+                    <td class="border border-black-800">{{task.Email}}</td>
+                    <td class="border border-black-800">{{task.Phone}}</td>
+                    <td class="border border-black-800">{{task.Gender}}</td>
+                    <td class="border border-black-800">{{task.City}}</td>
+                    <td class="flex justify-around" style="width: 140px;">
+                        <a class="border border-black-800" href="/delete/{{task.id}}" id="btn_delete">Delete</a>
+                        <br />
+                        <a class="border border-black-800" href="/edit/{{task.id}}" id="btn_edit">Edit</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        <div class="m-2">
+            <button id="btn_add" onclick="window.location.href='{{url_for('add')}}'">+ Add</button>
+        </div>
+</div>
+{% endblock %}
