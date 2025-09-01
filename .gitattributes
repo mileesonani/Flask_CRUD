@@ -1,0 +1,9 @@
+# Ignore compiled Tailwind CSS files from language stats
+static/css/*.css linguist-vendored
+static/**/*.css linguist-vendored
+
+# Ignore node modules if used
+node_modules/** linguist-vendored
+
+# Explicitly mark Python as main language (optional)
+*.py linguist-language=Python
