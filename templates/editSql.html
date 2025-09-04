@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Edit</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1 class="bg-gray-800 text-white font-semibold p-2">Edit Data Form</h1>
+    <form action="/edit/{{user.ID}}" method="POST" class="flex flex-col">
+        <div class="w-1/3 flex">
+            <label for="Name" class="font-semibold">Name</label>
+            <input type="text" name="Name" id="Name" value="{{user.Name}}" />
+        </div>
+        <div class="w-1/3 flex">
+            <label for="Email" class="font-semibold">Email</label>
+            <input type="email" name="Email" id="Email" value="{{user.Email}}" />
+        </div>
+        <div class="w-1/3 flex">
+            <label for="Phone" class="font-semibold">Phone</label>
+            <input type="text" name="Phone" id="Phone" value="{{user.Phone}}" />
+        </div>
+        <div class="w-1/3 flex">
+            <label for="Gender" class="font-semibold">Gender</label>
+            <!-- <input type="text" name="Gender" id="Gender" value="{{user.Gender}}" /> -->
+            <div class="flex items-center space-x-6">
+                <label class="inline-flex items-center">
+                    <input type="radio" name="Gender" value="Male" class="form-radio text-blue-600" {% if
+                        user['Gender']=='Male' %}checked{% endif %}>
+                    <span class="ml-2 text-gray-700">Male</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="radio" name="Gender" value="Female" class="form-radio text-pink-500" {% if
+                        user['Gender']=='Female' %}checked{% endif %}>
+                    <span class="ml-2 text-gray-700">Female</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="radio" name="Gender" value="Other" class="form-radio text-green-500" {% if
+                        user['Gender']=='Other' %}checked{% endif %}>
+                    <span class="ml-2 text-gray-700">Other</span>
+                </label>
+            </div>
+        </div>
+        <div class="w-1/3 flex">
+            <label for="City" class="font-semibold">City</label>
+            <input type="text" name="City" id="City" value="{{user.City}}" />
+        </div>
+        <div class="w-1/3 flex">
+            <input type="submit" value="Edit" id="btn_edit_form" />
+        </div>
+    </form>
+</div>
+{% endblock %}
